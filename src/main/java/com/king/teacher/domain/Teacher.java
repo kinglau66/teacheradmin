@@ -6,20 +6,12 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity
 @Table(name = "teacher")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
 public class Teacher {
 
     @Id
@@ -39,6 +31,44 @@ public class Teacher {
     @OneToMany(mappedBy = "teacher")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "student, teacher" }, allowSetters = true)
-    @ToString.Exclude
     private Set<Registration> registrations = new HashSet<>();
+
+    public Teacher() {}
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public @Email @Size(min = 5, max = 254) String getEmail() {
+        return this.email;
+    }
+
+    public @Size(max = 50) String getName() {
+        return this.name;
+    }
+
+    public Set<Registration> getRegistrations() {
+        return this.registrations;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setEmail(@Email @Size(min = 5, max = 254) String email) {
+        this.email = email;
+    }
+
+    public void setName(@Size(max = 50) String name) {
+        this.name = name;
+    }
+
+    @JsonIgnoreProperties(value = { "student, teacher" }, allowSetters = true)
+    public void setRegistrations(Set<Registration> registrations) {
+        this.registrations = registrations;
+    }
+
+    public String toString() {
+        return "Teacher(id=" + this.getId() + ", email=" + this.getEmail() + ", name=" + this.getName() + ")";
+    }
 }
