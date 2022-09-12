@@ -1,0 +1,19 @@
+services:
+  teacheradmin:
+    image: teacheradmin
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://teacheradmin-postgresql:5432/teacheradmin
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://teacheradmin-postgresql:5432/teacheradmin
+      - JHIPSTER_SLEEP=30
+      - SERVER_PORT=80
+    ports:
+      - '8080:8080'
+  teacheradmin-postgresql:
+    image: postgres:14.2
+    environment:
+      - POSTGRES_USER=teacheradmin
+      - POSTGRES_PASSWORD=
+      - POSTGRES_HOST_AUTH_METHOD=trust

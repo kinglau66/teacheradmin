@@ -1,0 +1,11 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["teacheradmin"],
+    "clusteredDbApps": {},
+    "directoryPath": "../../",
+    "gatewayType": "SpringCloudGateway",
+    "jwtSecretKey": "OGI2N2JlYjc1MzA5YmM3YTYwMjc1ZmI0NTI2NzdmY2Q5MjU1NDcyY2NhNjdhODcyMmJkMWMyNjNlZWVkNDU2NzM5NGRjNTg3YjIyYzhjOTM3OGNiYmUxMTE5ZGU0Y2I5MmJiZg==",
+    "monitoring": "no",
+    "serviceDiscoveryType": false
+  }
+}

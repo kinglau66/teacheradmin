@@ -3,8 +3,8 @@ version: '3.8'
 services:
   teacheradmin-postgresql:
     image: postgres:14.2
-    # volumes:
-    #   - ~/volumes/jhipster/teacheradmin/postgresql/:/var/lib/postgresql/data/
+    volumes:
+      - ~/volumes/jhipster/teacheradmin/postgresql/:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=teacheradmin
       - POSTGRES_PASSWORD=
