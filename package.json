@@ -48,6 +48,8 @@
     "packaging": "jar"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "generator-jhipster": "7.7.0",
     "husky": "7.0.4",
     "lint-staged": "12.3.4",
