@@ -3,12 +3,6 @@ package com.king.teacher.domain;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Objects;
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Size;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -27,6 +21,15 @@ public class Registration {
     @ManyToOne
     @JsonIgnoreProperties(value = { "registrations" }, allowSetters = true)
     private Student student;
+
+    Registration(Teacher teacher, Student student) {
+        this.teacher = teacher;
+        this.student = student;
+    }
+
+    public static RegistrationBuilder builder() {
+        return new RegistrationBuilder();
+    }
 
     public Teacher getTeacher() {
         return teacher;
@@ -55,5 +58,31 @@ public class Registration {
     @Override
     public int hashCode() {
         return Objects.hash(teacher, student);
+    }
+
+    public static class RegistrationBuilder {
+
+        private Teacher teacher;
+        private Student student;
+
+        RegistrationBuilder() {}
+
+        public RegistrationBuilder teacher(Teacher teacher) {
+            this.teacher = teacher;
+            return this;
+        }
+
+        public RegistrationBuilder student(Student student) {
+            this.student = student;
+            return this;
+        }
+
+        public Registration build() {
+            return new Registration(teacher, student);
+        }
+
+        public String toString() {
+            return "Registration.RegistrationBuilder(teacher=" + this.teacher + ", student=" + this.student + ")";
+        }
     }
 }

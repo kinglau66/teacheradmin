@@ -17,18 +17,28 @@ public class Suspension {
      */
     @Id
     @ManyToOne
-    @JsonIgnoreProperties(value = { "registrations" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "suspensions" }, allowSetters = true)
     private Teacher teacher;
 
     @Id
     @OneToOne
-    @JsonIgnoreProperties(value = { "registrations" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "suspensions" }, allowSetters = true)
     private Student student;
 
     @Column(name = "suspendDate", length = 50)
     private LocalDateTime suspendDate = LocalDateTime.now();
 
     public Suspension() {}
+
+    public Suspension(Teacher teacher, Student student, LocalDateTime suspendDate) {
+        this.teacher = teacher;
+        this.student = student;
+        this.suspendDate = suspendDate;
+    }
+
+    public static SuspensionBuilder builder() {
+        return new SuspensionBuilder();
+    }
 
     public Teacher getTeacher() {
         return this.teacher;
@@ -60,5 +70,45 @@ public class Suspension {
         return (
             "Suspension(teacher=" + this.getTeacher() + ", student=" + this.getStudent() + ", suspendDate=" + this.getSuspendDate() + ")"
         );
+    }
+
+    public static class SuspensionBuilder {
+
+        private Teacher teacher;
+        private Student student;
+        private LocalDateTime suspendDate;
+
+        SuspensionBuilder() {}
+
+        public SuspensionBuilder teacher(Teacher teacher) {
+            this.teacher = teacher;
+            return this;
+        }
+
+        public SuspensionBuilder student(Student student) {
+            this.student = student;
+            return this;
+        }
+
+        public SuspensionBuilder suspendDate(LocalDateTime suspendDate) {
+            this.suspendDate = suspendDate;
+            return this;
+        }
+
+        public Suspension build() {
+            return new Suspension(teacher, student, suspendDate);
+        }
+
+        public String toString() {
+            return (
+                "Suspension.SuspensionBuilder(teacher=" +
+                this.teacher +
+                ", student=" +
+                this.student +
+                ", suspendDate=" +
+                this.suspendDate +
+                ")"
+            );
+        }
     }
 }

@@ -35,6 +35,17 @@ public class Student {
 
     public Student() {}
 
+    public Student(Long id, @Email @Size(min = 5, max = 254) String email, @Size(max = 50) String name, Set<Registration> registrations) {
+        this.id = id;
+        this.email = email;
+        this.name = name;
+        this.registrations = registrations;
+    }
+
+    public static StudentBuilder builder() {
+        return new StudentBuilder();
+    }
+
     public Long getId() {
         return this.id;
     }
@@ -70,5 +81,59 @@ public class Student {
 
     public String toString() {
         return "Student(id=" + this.getId() + ", email=" + this.getEmail() + ", name=" + this.getName() + ")";
+    }
+
+    public static class StudentBuilder {
+
+        private Long id;
+
+        @Email
+        @Size(min = 5, max = 254)
+        private String email;
+
+        @Size(max = 50)
+        private String name;
+
+        private Set<Registration> registrations;
+
+        StudentBuilder() {}
+
+        public StudentBuilder id(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public StudentBuilder email(@Email @Size(min = 5, max = 254) String email) {
+            this.email = email;
+            return this;
+        }
+
+        public StudentBuilder name(@Size(max = 50) String name) {
+            this.name = name;
+            return this;
+        }
+
+        public StudentBuilder registrations(Set<Registration> registrations) {
+            this.registrations = registrations;
+            return this;
+        }
+
+        public Student build() {
+            return new Student(id, email, name, registrations);
+        }
+
+        public String toString() {
+            return (
+                "Student.StudentBuilder(id=" +
+                this.id +
+                ", email=" +
+                this.email +
+                ", name=" +
+                this.name +
+                ", registrations=" +
+                this.registrations +
+                ")"
+            );
+        }
     }
 }
