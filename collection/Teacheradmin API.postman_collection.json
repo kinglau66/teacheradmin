@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "795fa727-7621-43a3-807d-f25c30fe7528",
+		"_postman_id": "b7027dc3-bbfc-4e46-9de4-d4ea40509bf7",
 		"name": "Teacheradmin API",
 		"description": "Teacheradmin API documentation",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -153,7 +153,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/admin/users?page=0&size=20&sort=esse aute incididunt ex&sort=in",
+									"raw": "{{baseUrl}}/api/admin/users?page=0&size=20&sort=velit sint aliqua laborum&sort=nulla eu",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -175,12 +175,12 @@
 										},
 										{
 											"key": "sort",
-											"value": "esse aute incididunt ex",
+											"value": "velit sint aliqua laborum",
 											"description": "Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
 										},
 										{
 											"key": "sort",
-											"value": "in",
+											"value": "nulla eu",
 											"description": "Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
 										}
 									]
@@ -193,7 +193,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/admin/users?page=0&size=20&sort=veniam sed al&sort=id ipsum",
+											"raw": "{{baseUrl}}/api/admin/users?page=0&size=20&sort=magna cupi&sort=nostrud",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -213,11 +213,11 @@
 												},
 												{
 													"key": "sort",
-													"value": "veniam sed al"
+													"value": "magna cupi"
 												},
 												{
 													"key": "sort",
-													"value": "id ipsum"
+													"value": "nostrud"
 												}
 											]
 										}
@@ -428,7 +428,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "minim veniam"
+									"body": "ut laborum mollit"
 								}
 							]
 						},
@@ -444,7 +444,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"password\": \"ut laborum\",\n    \"username\": \"incididunt exercitation\",\n    \"rememberMe\": true\n}",
+									"raw": "{\n    \"password\": \"ad reprehenderit\",\n    \"username\": \"offi\",\n    \"rememberMe\": false\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -470,7 +470,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"password\": \"ut laborum\",\n    \"username\": \"incididunt exercitation\",\n    \"rememberMe\": true\n}",
+											"raw": "{\n    \"password\": \"ad reprehenderit\",\n    \"username\": \"offi\",\n    \"rememberMe\": false\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -522,7 +522,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "\"minim veniam\"",
+											"raw": "\"ut laborum mollit\"",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -550,7 +550,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "\"minim veniam\"",
+													"raw": "\"ut laborum mollit\"",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -596,7 +596,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"key\": \"mollit ut\",\n    \"newPassword\": \"occaecat exercitation eiusmod\"\n}",
+											"raw": "{\n    \"key\": \"id\",\n    \"newPassword\": \"id voluptate\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -624,7 +624,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n    \"key\": \"mollit ut\",\n    \"newPassword\": \"occaecat exercitation eiusmod\"\n}",
+													"raw": "{\n    \"key\": \"id\",\n    \"newPassword\": \"id voluptate\"\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -789,7 +789,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"currentPassword\": \"cupidatat\",\n    \"newPassword\": \"ullamco qui aliquip\"\n}",
+									"raw": "{\n    \"currentPassword\": \"in Lorem Ut\",\n    \"newPassword\": \"mollit eiusmod nostrud\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -816,7 +816,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"currentPassword\": \"cupidatat\",\n    \"newPassword\": \"ullamco qui aliquip\"\n}",
+											"raw": "{\n    \"currentPassword\": \"in Lorem Ut\",\n    \"newPassword\": \"mollit eiusmod nostrud\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -863,7 +863,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"eu Lorem magna\",\n    \"name\": \"Ut sit in nulla et\"\n}",
+							"raw": "{\n    \"email\": \"labore adipisicing irure\",\n    \"name\": \"exercitation anim offic\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -889,7 +889,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"eu Lorem magna\",\n    \"name\": \"Ut sit in nulla et\"\n}",
+									"raw": "{\n    \"email\": \"labore adipisicing irure\",\n    \"name\": \"exercitation anim offic\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -922,7 +922,7 @@
 					]
 				},
 				{
-					"name": "find Common Students",
+					"name": "suspend Student",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -933,7 +933,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"student\": \"dolor dolore commodo\"\n}",
+							"raw": "{\n    \"student\": \"non ad Lorem\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -959,7 +959,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"student\": \"dolor dolore commodo\"\n}",
+									"raw": "{\n    \"student\": \"non ad Lorem\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -992,7 +992,7 @@
 					]
 				},
 				{
-					"name": "add Teacher 1",
+					"name": "add Student",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1003,7 +1003,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"eu Lorem magna\",\n    \"name\": \"Ut sit in nulla et\"\n}",
+							"raw": "{\n    \"email\": \"labore adipisicing irure\",\n    \"name\": \"exercitation anim offic\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1029,7 +1029,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"eu Lorem magna\",\n    \"name\": \"Ut sit in nulla et\"\n}",
+									"raw": "{\n    \"email\": \"labore adipisicing irure\",\n    \"name\": \"exercitation anim offic\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1143,7 +1143,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"students\": [\n        \"pariatur proident\",\n        \"id\"\n    ],\n    \"teacher\": \"amet adipisicing\"\n}",
+							"raw": "{\n    \"students\": [\n        \"Lorem\",\n        \"in nulla exercitation\"\n    ],\n    \"teacher\": \"mollit dol\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1169,7 +1169,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"students\": [\n        \"exercitation veniam ut\",\n        \"labore in\"\n    ],\n    \"teacher\": \"eu sit quis\"\n}",
+									"raw": "{\n    \"students\": [\n        \"consectetur a\",\n        \"labore deserunt laboris officia\"\n    ],\n    \"teacher\": \"magna\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1207,7 +1207,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/users?page=0&size=20&sort=esse aute incididunt ex&sort=in",
+							"raw": "{{baseUrl}}/api/users?page=0&size=20&sort=velit sint aliqua laborum&sort=nulla eu",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1228,12 +1228,12 @@
 								},
 								{
 									"key": "sort",
-									"value": "esse aute incididunt ex",
+									"value": "velit sint aliqua laborum",
 									"description": "Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
 								},
 								{
 									"key": "sort",
-									"value": "in",
+									"value": "nulla eu",
 									"description": "Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
 								}
 							]
@@ -1246,7 +1246,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/users?page=0&size=20&sort=veniam sed al&sort=id ipsum",
+									"raw": "{{baseUrl}}/api/users?page=0&size=20&sort=magna cupi&sort=nostrud",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1265,11 +1265,11 @@
 										},
 										{
 											"key": "sort",
-											"value": "veniam sed al"
+											"value": "magna cupi"
 										},
 										{
 											"key": "sort",
-											"value": "id ipsum"
+											"value": "nostrud"
 										}
 									]
 								}
@@ -1289,12 +1289,12 @@
 					]
 				},
 				{
-					"name": "find Common Students 1",
+					"name": "find Common Students",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/commonstudents?teacher=sit sint&teacher=exercitation est deserunt reprehenderit",
+							"raw": "{{baseUrl}}/api/commonstudents?teacher=Excepteur id&teacher=irure laborum",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1305,12 +1305,12 @@
 							"query": [
 								{
 									"key": "teacher",
-									"value": "sit sint",
+									"value": "Excepteur id",
 									"description": "(Required) "
 								},
 								{
 									"key": "teacher",
-									"value": "exercitation est deserunt reprehenderit",
+									"value": "irure laborum",
 									"description": "(Required) "
 								}
 							]
@@ -1323,7 +1323,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/commonstudents?teacher=in quis&teacher=magna ",
+									"raw": "{{baseUrl}}/api/commonstudents?teacher=Lorem non laborum consectetur&teacher=Ut id mollit",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1334,11 +1334,11 @@
 									"query": [
 										{
 											"key": "teacher",
-											"value": "in quis"
+											"value": "Lorem non laborum consectetur"
 										},
 										{
 											"key": "teacher",
-											"value": "magna "
+											"value": "Ut id mollit"
 										}
 									]
 								}
@@ -1410,7 +1410,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/activate?key=minim veniam",
+							"raw": "{{baseUrl}}/api/activate?key=ut laborum mollit",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1421,7 +1421,7 @@
 							"query": [
 								{
 									"key": "key",
-									"value": "minim veniam",
+									"value": "ut laborum mollit",
 									"description": "(Required) "
 								}
 							]
@@ -1434,7 +1434,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/activate?key=minim veniam",
+									"raw": "{{baseUrl}}/api/activate?key=ut laborum mollit",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1445,7 +1445,7 @@
 									"query": [
 										{
 											"key": "key",
-											"value": "minim veniam"
+											"value": "ut laborum mollit"
 										}
 									]
 								}
@@ -1467,11 +1467,34 @@
 			]
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://teacheradmin.herokuapp.com",
-			"type": "string"
+			"value": "https://teacheradmin.herokuapp.com"
+		},
+		{
+			"key": "localUrl",
+			"value": "http://localhost:8080"
 		}
 	]
 }
