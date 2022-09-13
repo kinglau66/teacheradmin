@@ -21,11 +21,11 @@ public class StudentResource {
 
     /**
      * used to add teacher
-     * @param addTeacherDTO
+     * @param addStudentDTO
      */
     @PostMapping("")
     @ResponseStatus(value = HttpStatus.CREATED)
-    public void addTeacher(@Valid @RequestBody AddTeacherAndStudentDTO addTeacherDTO) {
-        this.studentService.addStudent(addTeacherDTO);
+    public void addStudent(@Valid @RequestBody AddTeacherAndStudentDTO addStudentDTO) {
+        this.studentService.addStudent(addStudentDTO);
     }
 }
