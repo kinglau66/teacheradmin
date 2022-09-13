@@ -35,7 +35,7 @@ public class SuspendService {
         Student student = studentRepository
             .findByEmail(suspendDTO.getStudent())
             .orElseThrow(() ->
-                new BadRequestAlertException("student does not exits", Teacher.class.getSimpleName(), ErrorConstants.ERR_VALIDATION)
+                new EntityMissingException(Student.class.getSimpleName())
             );
         student.setSuspendInd("Y");
         this.studentRepository.save(student);

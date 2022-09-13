@@ -10,6 +10,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.servlet.http.HttpServletRequest;
 
+import com.king.teacher.service.EntityExistException;
+import com.king.teacher.service.EntityMissingException;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -86,9 +88,10 @@ public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait
             builder.withCause(((DefaultProblem) problem).getCause()).withDetail(problem.getDetail()).withInstance(problem.getInstance());
             problem.getParameters().forEach(builder::with);
             if (!problem.getParameters().containsKey(MESSAGE_KEY) && problem.getStatus() != null) {
+                String detailMessage = problem.getDetail() != null && problem.getDetail().contains("ConstraintViolationException") ? "Inserting data fails due to existing data, please check against existing data." : problem.getDetail();
                 builder
                     .with(MESSAGE_KEY, "error.http." + problem.getStatus().getStatusCode())
-                    .with(MESSAGE, problem.getDetail());
+                    .with(MESSAGE, detailMessage);
             }
         }
         return new ResponseEntity<>(builder.build(), entity.getHeaders(), entity.getStatusCode());
@@ -127,6 +130,32 @@ public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait
         NativeWebRequest request
     ) {
         EmailAlreadyUsedException problem = new EmailAlreadyUsedException();
+        return create(
+            problem,
+            request,
+            HeaderUtil.createFailureAlert(applicationName, true, problem.getEntityName(), problem.getErrorKey(), problem.getMessage())
+        );
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Problem> handleEntityExistException(
+        com.king.teacher.service.EntityExistException ex,
+        NativeWebRequest request
+    ) {
+        BadRequestAlertException problem = new BadRequestAlertException(ex.getMessage(), EntityExistException.class.getSimpleName(), ErrorConstants.ERR_VALIDATION);
+        return create(
+            problem,
+            request,
+            HeaderUtil.createFailureAlert(applicationName, true, problem.getEntityName(), problem.getErrorKey(), problem.getMessage())
+        );
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Problem> handleEntityMissingException(
+        com.king.teacher.service.EntityMissingException ex,
+        NativeWebRequest request
+    ) {
+        BadRequestAlertException problem = new BadRequestAlertException(ex.getMessage(), EntityExistException.class.getSimpleName(), ErrorConstants.ERR_VALIDATION);
         return create(
             problem,
             request,
