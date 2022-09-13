@@ -33,7 +33,6 @@ public class Student {
     @Column(name = "suspend_ind", length = 1)
     private String suspendInd = "N";
 
-    @Size(max = 1)
     @Column(name = "suspend_date", length = 1)
     private LocalDateTime suspendDate;
 
@@ -105,7 +104,7 @@ public class Student {
 
     public void setSuspendInd(String suspendInd) {
         this.suspendInd = suspendInd;
-        this.suspendDate = LocalDateTime.now();
+        if(suspendInd.equals("Y")) this.suspendDate = LocalDateTime.now();
     }
 
     public LocalDateTime getSuspendDate() {
@@ -209,11 +208,13 @@ public class Student {
 
         public StudentBuilder suspendInd(@Size(max = 1) String suspendInd) {
             this.suspendInd = suspendInd;
+            if(suspendInd.equals("Y")) this.suspendDate = LocalDateTime.now();
             return this;
         }
 
         public StudentBuilder suspendDate(LocalDateTime suspendDate) {
             this.suspendDate = suspendDate;
+
             return this;
         }
 

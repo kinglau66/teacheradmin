@@ -28,12 +28,12 @@ public class SuspendResource {
     /**
      * used to add teacher
      *
-     * @param addTeacherDTO
+     * @param suspendDTO
      * @return
      */
     @PostMapping("")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void findCommonStudents(@Valid SuspendDTO suspendDTO) {
+    public void suspendStudent(@Valid @RequestBody SuspendDTO suspendDTO) {
         this.suspendService.addSuspend(suspendDTO);
     }
 }
